@@ -16,7 +16,9 @@ This hook is executed to launch the applications.
 
 import os
 import tank
+import sgtk
 
+logger=sgtk.platform.get_logger(__name__)
 
 class AppLaunch(tank.Hook):
     """
