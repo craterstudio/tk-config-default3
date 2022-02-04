@@ -42,6 +42,11 @@ class AppLaunch(tank.Hook):
 
         :returns: (dict) The two valid keys are 'command' (str) and 'return_code' (int).
         """
+        loggerinfo=["tk-multi-launchapp", "app_launch"," >>> "]
+        debugdo=True
+
+        if debugdo:
+            logger.info("%s %s %s %s",loggerinfo[0],loggerinfo[1],loggerinfo[2],version)
 
         if tank.util.is_linux():
             # on linux, we just run the executable directly
