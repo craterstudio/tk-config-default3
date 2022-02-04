@@ -44,7 +44,7 @@ class AppLaunch(tank.Hook):
         """
         loggerinfo=["tk-multi-launchapp", "app_launch"," >>> "]
 
-        logger.debug("%s %s %s %s",loggerinfo[0],loggerinfo[1],loggerinfo[2],version)
+        print("%s %s %s %s".format(loggerinfo[0],loggerinfo[1],loggerinfo[2],version))
 
         if tank.util.is_linux():
             # on linux, we just run the executable directly
