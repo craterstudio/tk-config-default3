@@ -18,7 +18,7 @@ import os
 import tank
 import sgtk
 
-logger=sgtk.platform.get_logger(__name__)
+logger=sgtk.LogManager.get_logger(__name__)
 
 class AppLaunch(tank.Hook):
     """
@@ -46,7 +46,7 @@ class AppLaunch(tank.Hook):
         debugdo=True
 
         if debugdo:
-            logger.info("%s %s %s %s",loggerinfo[0],loggerinfo[1],loggerinfo[2],version)
+            logger.debug("%s %s %s %s",loggerinfo[0],loggerinfo[1],loggerinfo[2],version)
 
         if tank.util.is_linux():
             # on linux, we just run the executable directly
