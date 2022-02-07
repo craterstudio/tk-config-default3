@@ -45,6 +45,7 @@ class AppLaunch(tank.Hook):
         loggerinfo=["tk-multi-launchapp", "app_launch"," >>>>> "]
         environtest=os.environ["TK_TEST"]
         environdirlcla=os.environ["DIR_LCLA"]
+        environhxaa="SG3_HX19"
         hxveraa="19.0.383"
         hxengine="tk-houdini"
         pathtstbat="%s\\pipeline\\crater-meta\\lib\\cs_studio3\\p3_start_local_process.bat"
@@ -59,7 +60,7 @@ class AppLaunch(tank.Hook):
 
         if ((engine_name==hxengine) and (version==hxveraa)):
             # going to use some version of houdinifx
-            pass
+            os.environ[environhxaa]="TRUE"
 
         if tank.util.is_linux():
             # on linux, we just run the executable directly
@@ -87,7 +88,10 @@ class AppLaunch(tank.Hook):
         else:
             # on windows, we run the start command in order to avoid
             # any command shells popping up as part of the application launch.
-            cmd = 'start /B "App" "%s" %s' % (app_path, app_args)
+            if environtest == "TRUE":
+                cmd = 'start /B "App" "%s" %s' % (pathtstbat, app_args)
+            else:
+                cmd = 'start /B "App" "%s" %s' % (app_path, app_args)
 
         # run the command to launch the app
         exit_code = os.system(cmd)
