@@ -55,7 +55,7 @@ class AppLaunch(tank.Hook):
 
         loggerinfo.extend(otherinfo)
 
-        logger.debug("%s %s %s %s %s %s %s %s %s" % tuple(loggerinfo))
+        logger.debug("%s %s %s %s %s %s %s %s %s %s" % tuple(loggerinfo))
 
         if ((engine_name==hxengine) and (version==hxveraa)):
             # going to use some version of houdinifx
