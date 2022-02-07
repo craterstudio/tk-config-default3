@@ -51,6 +51,7 @@ class AppLaunch(tank.Hook):
         hxengine="tk-houdini"
         pathtstbat="%s\\pipeline\\crater-meta\\lib\\cs_studio3\\p3_start_local_process.bat"
         pathtstbathx="%s\\pipeline\\crater-meta\\lib\\cs_studio3\\p3_start_local_sg3hx19.bat"
+        pathtstbatmy="%s\\pipeline\\crater-meta\\lib\\cs_studio3\\p3_start_local_sg3my22.bat"
         otherinfo=None
 
         pathtstbat=pathtstbat % environdirlcla
@@ -92,7 +93,7 @@ class AppLaunch(tank.Hook):
             # on windows, we run the start command in order to avoid
             # any command shells popping up as part of the application launch.
             if environtest == "TRUE":
-                cmd = 'start /B "App" "%s" %s' % (pathtstbathx, "")
+                cmd = 'start /B "App" "%s" %s' % (pathtstbatmy, "")
             else:
                 cmd = 'start /B "App" "%s" %s' % (app_path, app_args)
 
