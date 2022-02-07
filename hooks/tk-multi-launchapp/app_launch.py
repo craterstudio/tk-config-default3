@@ -48,8 +48,10 @@ class AppLaunch(tank.Hook):
         loggerinfo.append(version)
         loggerinfo.append(environtest)
         loggerinfo.append(type(environtest))
+        loggerinfo.append(app_path)
+        loggerinfo.append(app_args)
 
-        logger.debug("%s %s %s %s %s %s" % tuple(loggerinfo))
+        logger.debug("%s %s %s %s %s %s %s %s" % tuple(loggerinfo))
 
         if tank.util.is_linux():
             # on linux, we just run the executable directly
