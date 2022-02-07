@@ -50,7 +50,7 @@ class AppLaunch(tank.Hook):
         hxveraa="19.0.383"
         hxengine="tk-houdini"
         pathtstbat="%s\\pipeline\\crater-meta\\lib\\cs_studio3\\p3_start_local_process.bat"
-        pathtstbathx="%s\\pipeline\\crater-meta\\lib\\cs_studio3\\p3_start_local_sg3gx19.bat"
+        pathtstbathx="%s\\pipeline\\crater-meta\\lib\\cs_studio3\\p3_start_local_sg3hx19.bat"
         otherinfo=None
 
         pathtstbat=pathtstbat % environdirlcla
