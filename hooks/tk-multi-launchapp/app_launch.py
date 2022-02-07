@@ -42,7 +42,7 @@ class AppLaunch(tank.Hook):
 
         :returns: (dict) The two valid keys are 'command' (str) and 'return_code' (int).
         """
-        loggerinfo=["tk-multi-launchapp", "app_launch"," >>> "]
+        loggerinfo=["tk-multi-launchapp", "app_launch"," >>>>> "]
 
         loggerinfo.append(version)
 
