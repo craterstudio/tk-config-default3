@@ -45,11 +45,16 @@ class AppLaunch(tank.Hook):
         loggerinfo=["tk-multi-launchapp", "app_launch"," >>>>> "]
         environtest=os.environ["TK_TEST"]
         hxveraa="19.0.383"
+        hxengine="tk-houdini"
         otherinfo=[version,environtest,type(environtest),app_path,app_args,engine_name]
 
         loggerinfo.extend(otherinfo)
 
         logger.debug("%s %s %s %s %s %s %s %s %s" % tuple(loggerinfo))
+
+        if ((engine_name==hxengine) and (version==hxveraa)):
+            # going to use some version of houdinifx
+            pass
 
         if tank.util.is_linux():
             # on linux, we just run the executable directly
