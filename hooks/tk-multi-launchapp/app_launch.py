@@ -44,9 +44,14 @@ class AppLaunch(tank.Hook):
         """
         loggerinfo=["tk-multi-launchapp", "app_launch"," >>>>> "]
         environtest=os.environ["TK_TEST"]
+        environdirlcla=os.environ["DIR_LCLA"]
         hxveraa="19.0.383"
         hxengine="tk-houdini"
-        otherinfo=[version,environtest,type(environtest),app_path,app_args,engine_name]
+        pathtstbat="%s\\pipeline\\crater-meta\\lib\\cs_studio3\\p3_start_local_process.bat"
+        otherinfo=None
+
+        pathtstbat=pathtstbat % environdirlcla
+        otherinfo=[version,environtest,type(environtest),app_path,app_args,engine_name,pathtstbat]
 
         loggerinfo.extend(otherinfo)
 
