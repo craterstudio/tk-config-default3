@@ -46,6 +46,7 @@ class AppLaunch(tank.Hook):
         environtest=os.environ["TK_TEST"]
         environdirlcla=os.environ["DIR_LCLA"]
         environhxaa="SG3_HX19"
+        environcallapp="CALL_APP"
         hxveraa="19.0.383"
         hxengine="tk-houdini"
         pathtstbat="%s\\pipeline\\crater-meta\\lib\\cs_studio3\\p3_start_local_process.bat"
@@ -60,7 +61,7 @@ class AppLaunch(tank.Hook):
 
         if ((engine_name==hxengine) and (version==hxveraa)):
             # going to use some version of houdinifx
-            os.environ[environhxaa]="TRUE"
+            os.environ[environcallapp]=environhxaa
 
         if tank.util.is_linux():
             # on linux, we just run the executable directly
