@@ -46,9 +46,12 @@ class AppLaunch(tank.Hook):
         environtest=os.environ["TK_TEST"]
         environdirlcla=os.environ["DIR_LCLA"]
         environhxaa="SG3_HX19"
+        environmyaa="SG3_MY22"
         environcallapp="CALL_APP"
         hxveraa="19.0.383"
+        myveraa="2022"
         hxengine="tk-houdini"
+        myengine="tk-maya"
         pathtstbat="%s\\pipeline\\crater-meta\\lib\\cs_studio3\\p3_start_local_process.bat"
         pathtstbathx="%s\\pipeline\\crater-meta\\lib\\cs_studio3\\p3_start_local_sg3hx19.bat"
         pathtstbatmy="%s\\pipeline\\crater-meta\\lib\\cs_studio3\\p3_start_local_sg3my22.bat"
@@ -66,6 +69,9 @@ class AppLaunch(tank.Hook):
         if ((engine_name==hxengine) and (version==hxveraa)):
             # going to use some version of houdinifx
             os.environ[environcallapp]=environhxaa
+        elif ((engine_name==myengine) and (version==myveraa)):
+            # going to use some version of maya
+            os.environ[environcallapp]=environmyaa
 
         if tank.util.is_linux():
             # on linux, we just run the executable directly
@@ -94,7 +100,7 @@ class AppLaunch(tank.Hook):
             # on windows, we run the start command in order to avoid
             # any command shells popping up as part of the application launch.
             if environtest == "TRUE":
-                cmd = 'start /B "App" "%s" %s' % (pathtstbatmy, "")
+                cmd = 'start /B "App" "%s" %s' % (pathtstbat, "")
             else:
                 cmd = 'start /B "App" "%s" %s' % (app_path, app_args)
 
