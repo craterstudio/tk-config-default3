@@ -54,6 +54,7 @@ class AppLaunch(tank.Hook):
         otherinfo=None
 
         pathtstbat=pathtstbat % environdirlcla
+        pathtstbathx=pathtstbathx % environdirlcla
         otherinfo=[version,environtest,type(environtest),app_path,app_args,engine_name,pathtstbat]
 
         loggerinfo.extend(otherinfo)
