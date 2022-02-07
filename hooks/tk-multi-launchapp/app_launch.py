@@ -75,6 +75,9 @@ class AppLaunch(tank.Hook):
         elif ((engine_name==myengine) and (version==myveraa)):
             # going to use some version of maya
             os.environ[environcallapp]=environmyaa
+        elif ((engine_name==nkengine) and (version==nkveraa)):
+            # going to use some version of nk
+            os.environ[environcallapp]=environnkaa
 
         if tank.util.is_linux():
             # on linux, we just run the executable directly
