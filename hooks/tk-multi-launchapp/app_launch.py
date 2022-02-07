@@ -107,5 +107,5 @@ class AppLaunch(tank.Hook):
         # run the command to launch the app
         exit_code = os.system(cmd)
 
-        return {"command": cmd, "return_code": 0}
+        return {"command": cmd, "return_code": exit_code}
 
