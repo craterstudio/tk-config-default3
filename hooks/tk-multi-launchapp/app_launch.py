@@ -47,11 +47,14 @@ class AppLaunch(tank.Hook):
         environdirlcla=os.environ["DIR_LCLA"]
         environhxaa=os.environ["TK_HXAA"]
         environmyaa=os.environ["TK_MYAA"]
+        environnkaa=os.environ["TK_NKAA"]
         environcallapp="CALL_APP"
         hxveraa=os.environ["TK_VER_HXAA"]
         myveraa=os.environ["TK_VER_MYAA"]
+        nkveraa=os.environ["TK_VER_NKAA"]
         hxengine=os.environ["TK_TK_HX"]
         myengine=os.environ["TK_TK_MY"]
+        nkengine=os.environ["TK_TK_NK"]
         pathtstbat="%s\\pipeline\\crater-meta\\lib\\cs_studio3\\p3_start_local_process.bat"
         pathtstbathx="%s\\pipeline\\crater-meta\\lib\\cs_studio3\\p3_start_local_sg3hx19.bat"
         pathtstbatmy="%s\\pipeline\\crater-meta\\lib\\cs_studio3\\p3_start_local_sg3my22.bat"
