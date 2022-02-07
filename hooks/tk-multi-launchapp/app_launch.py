@@ -43,10 +43,12 @@ class AppLaunch(tank.Hook):
         :returns: (dict) The two valid keys are 'command' (str) and 'return_code' (int).
         """
         loggerinfo=["tk-multi-launchapp", "app_launch"," >>>>> "]
+        environtest=os.environ["TK_TEST"]
 
         loggerinfo.append(version)
+        loggerinfo.append(environtest)
 
-        logger.debug("%s %s %s %s" % tuple(loggerinfo))
+        logger.debug("%s %s %s %s %s" % tuple(loggerinfo))
 
         if tank.util.is_linux():
             # on linux, we just run the executable directly
