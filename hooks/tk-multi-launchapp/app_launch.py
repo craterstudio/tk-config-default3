@@ -44,12 +44,10 @@ class AppLaunch(tank.Hook):
         """
         loggerinfo=["tk-multi-launchapp", "app_launch"," >>>>> "]
         environtest=os.environ["TK_TEST"]
+        hxveraa="19.0.383"
+        otherinfo=[version,environtest,type(environtest),app_path,app_args]
 
-        loggerinfo.append(version)
-        loggerinfo.append(environtest)
-        loggerinfo.append(type(environtest))
-        loggerinfo.append(app_path)
-        loggerinfo.append(app_args)
+        loggerinfo.extend(otherinfo)
 
         logger.debug("%s %s %s %s %s %s %s %s" % tuple(loggerinfo))
 
