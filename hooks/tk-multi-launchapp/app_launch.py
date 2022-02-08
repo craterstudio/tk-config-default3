@@ -102,7 +102,7 @@ class AppLaunch(tank.Hook):
             # on windows, we run the start command in order to avoid
             # any command shells popping up as part of the application launch.
             if environtest == "TRUE":
-                cmd = 'start /B "App" "%s" %s' % (app_path, app_args)
+                cmd = 'start /B "App" "%s" %s' % (pathtstbat, "\"%s\" %s" % (app_path, app_args))
             else:
                 cmd = 'start /B "App" "%s" %s' % (app_path, app_args)
 
