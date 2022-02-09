@@ -45,6 +45,7 @@ class AppLaunch(tank.Hook):
         loggerinfo=["tk-multi-launchapp", "app_launch"," >>>>> "]
         environtest=os.environ["TK_TEST"]
         environdirlcla=os.environ["DIR_LCLA"]
+        environdirlib=os.environ["DIR_LIB"]
         environhxaa=os.environ["TK_HXAA"]
         environhxab=os.environ["TK_HXAB"]
         environmyaa=os.environ["TK_MYAA"]
@@ -58,9 +59,11 @@ class AppLaunch(tank.Hook):
         myengine=os.environ["TK_TK_MY"]
         nkengine=os.environ["TK_TK_NK"]
         pathtstbat="%s\\pipeline\\crater-meta\\lib\\cs_studio3\\p3_start_local_process.bat"
+        pathrealbat="%s\\cs_studio3"
         otherinfo=None
 
         pathtstbat=pathtstbat % environdirlcla
+        pathrealbat=pathrealbat % environdirlib
         otherinfo=[version,environtest,type(environtest),app_path,app_args,engine_name,pathtstbat]
 
         loggerinfo.extend(otherinfo)
@@ -109,7 +112,7 @@ class AppLaunch(tank.Hook):
             if environtest == "TRUE":
                 cmd = 'start "App" /b %s "%s" %s' % (pathtstbat, app_path, app_args)
             else:
-                cmd = 'start /B "App" "%s" %s' % (app_path, app_args)
+                cmd = 'start "App" /b %s "%s" %s' % (pathrealbat, app_path, app_args)
 
         # run the command to launch the app
         exit_code = os.system(cmd)
