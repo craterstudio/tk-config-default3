@@ -46,10 +46,12 @@ class AppLaunch(tank.Hook):
         environtest=os.environ["TK_TEST"]
         environdirlcla=os.environ["DIR_LCLA"]
         environhxaa=os.environ["TK_HXAA"]
+        environhxab=os.environ["TK_HXAB"]
         environmyaa=os.environ["TK_MYAA"]
         environnkaa=os.environ["TK_NKAA"]
         environcallapp="CALL_APP"
         hxveraa=os.environ["TK_VER_HXAA"]
+        hxverab=os.environ["TK_VER_HXAB"]
         myveraa=os.environ["TK_VER_MYAA"]
         nkveraa=os.environ["TK_VER_NKAA"]
         hxengine=os.environ["TK_TK_HX"]
@@ -68,6 +70,9 @@ class AppLaunch(tank.Hook):
         if ((engine_name==hxengine) and (version==hxveraa)):
             # going to use some version of houdinifx
             os.environ[environcallapp]=environhxaa
+        elif ((engine_name==hxengine) and (version==hxverab)):
+            # going to use some version of houdinifx
+            os.environ[environcallapp]=environhxab
         elif ((engine_name==myengine) and (version==myveraa)):
             # going to use some version of maya
             os.environ[environcallapp]=environmyaa
