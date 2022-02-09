@@ -59,7 +59,7 @@ class AppLaunch(tank.Hook):
         myengine=os.environ["TK_TK_MY"]
         nkengine=os.environ["TK_TK_NK"]
         pathtstbat="%s\\pipeline\\crater-meta\\lib\\cs_studio3\\p3_start_local_process.bat"
-        pathrealbat="%s\\cs_studio3"
+        pathrealbat="%s\\cs_studio3\\p3_start_local_process.bat"
         otherinfo=None
 
         pathtstbat=pathtstbat % environdirlcla
